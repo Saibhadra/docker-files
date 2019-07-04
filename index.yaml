@@ -1,0 +1,181 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    arg: '40'
+    arg2: '20'
+  name: sait5
+spec:
+  containers:
+  - args:
+    - arg1
+    - ' arg2'
+    command:
+    - cmd1
+    - ' cmd2'
+    env:
+    - name: ENV
+      value: '10'
+    - name: '     '
+      value: ''
+    image: saitest5
+    name: sait5
+    ports:
+    - containerPort: 10
+    - containerPort: 20
+    - containerPort: 30
+
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  labels:
+    '     ': ''
+    arg1: '10'
+  name: sait6
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      enn: '10'
+  template:
+    metadata:
+      labels:
+        eny: '20'
+    spec:
+      containers:
+      - args:
+        - arg1
+        - ' arg2'
+        command:
+        - cmd1
+        - ' cmd2'
+        env:
+        - name: ENV
+          value: '10'
+        - name: '     '
+          value: ''
+        image: saitest5
+        name: sait5
+        ports:
+        - containerPort: 10
+        - containerPort: 20
+        - containerPort: 30
+
+---
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  labels:
+    arg1: '10'
+  name: sait7
+spec:
+  replicas: 10
+  selector:
+    sss: '10'
+  template:
+    metadata:
+      labels:
+        ssd: '20'
+    spec:
+      containers:
+      - args:
+        - arg1
+        - ' arg2'
+        command:
+        - cmd1
+        - ' cmd2'
+        env:
+        - name: ENV
+          value: '10'
+        - name: '     '
+          value: ''
+        image: saitest5
+        name: sait5
+        ports:
+        - containerPort: 10
+        - containerPort: 20
+        - containerPort: 30
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    sai: '10'
+  name: sait8
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      sais: '20'
+  template:
+    metadata:
+      labels:
+        saib: '30'
+    spec:
+      containers:
+      - args:
+        - arg1
+        - ' arg2'
+        command:
+        - cmd1
+        - ' cmd2'
+        env:
+        - name: ENV
+          value: '10'
+        - name: '     '
+          value: ''
+        image: saitest5
+        name: sait5
+        ports:
+        - containerPort: 10
+        - containerPort: 20
+        - containerPort: 30
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    env: '2'
+  name: sait
+spec:
+  ports:
+  - name: cut
+    port: 20
+    targetPort: 40
+  selector:
+    arg1: '10'
+  type: LoadBalancer
+
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  labels:
+    env: '10'
+  name: sait
+spec:
+  rules:
+  - host: sai
+    http:
+      paths:
+      - backend:
+          serviceName: sdd
+          servicePort: 10
+        path: abc
+
+---
+apiVersion: v1
+data:
+  password: c2FpYg==
+  username: c2FpYg==
+kind: Secret
+metadata:
+  labels:
+    arg: '1'
+  name: sait
+type: ccd
+
